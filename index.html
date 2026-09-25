@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Esther Bassey — a design engineer turning complex ideas into thoughtful interfaces, interactions, and working products."
+    />
+    <title>Esther Bassey — Design Engineer</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        document.documentElement.dataset.theme = savedTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch {
+        document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    </script>
+  <link rel="stylesheet" href="./styles.css?v=20260924-49" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-shell">
+      <a class="brand" href="#top" aria-label="Esther Bassey, home"><span class="brand-full">Esther Bassey</span><span class="brand-short" aria-hidden="true">EB</span></a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#selected-work">Work</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-button" type="button" aria-label="Toggle color theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.64 5.64 7.2 7.2M16.8 16.8l1.56 1.56M18.36 5.64 16.8 7.2M7.2 16.8l-1.56 1.56" />
+            <circle cx="12" cy="12" r="3.5" />
+          </svg>
+        </button>
+        <a class="talk-button" href="mailto:estherbassey4502@gmail.com">Let’s talk</a>
+      </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">I make pixels <span class="hero-rough">behave.</span></h1>
+          <p class="hero-description">I’m Esther, a <strong>Product Designer &amp; Design Engineer</strong> turning complex problems into thoughtful experiences, designed in Figma, brought to life with AI.</p>
+          <div class="hero-highlights-viewport">
+            <div class="hero-highlights-track">
+              <ul class="hero-highlights" aria-label="What I bring to the work">
+                <li>Complex systems, made simpler</li>
+                <li>4+ years of experience</li>
+                <li>Designing beyond the handoff</li>
+                <li>AI + Design + Code</li>
+              </ul>
+              <ul class="hero-highlights" aria-hidden="true">
+                <li>Complex systems, made simpler</li>
+                <li>4+ years of experience</li>
+                <li>Designing beyond the handoff</li>
+                <li>AI + Design + Code</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="work-showcase" id="work" role="button" tabindex="0" aria-pressed="false" aria-label="Make the four capability cards behave by arranging them into a precise layout">
+        <div class="showcase-stage" aria-hidden="true">
+          <img class="showcase-card showcase-card-product" src="./assets/showcase-card-product-4x.png" alt="" />
+          <div class="showcase-card showcase-card-interaction interaction-demo">
+            <span class="interaction-demo-title">MOTION DESIGN</span>
+            <img class="interaction-tile interaction-tile-ai" src="./assets/interaction-ai-4x.png" alt="" style="--i: 0; --r: -10deg; --stack-x: 49.3%; --stack-y: 49.7%" />
+            <img class="interaction-tile interaction-tile-meeting" src="./assets/interaction-meeting-4x.png" alt="" style="--i: 1; --r: 8deg; --stack-x: 50.1%; --stack-y: 49.4%" />
+            <img class="interaction-tile interaction-tile-celebrations" src="./assets/interaction-celebrations-4x.png" alt="" style="--i: 2; --r: -7deg; --stack-x: 49.6%; --stack-y: 50.3%" />
+            <img class="interaction-tile interaction-tile-shift" src="./assets/interaction-shift-4x.png" alt="" style="--i: 3; --r: 9deg; --stack-x: 50.5%; --stack-y: 50%" />
+            <img class="interaction-tile interaction-tile-success" src="./assets/interaction-success-4x.png" alt="" style="--i: 4; --r: -8deg; --stack-x: 49.8%; --stack-y: 49.8%" />
+            <img class="interaction-tile interaction-tile-request" src="./assets/interaction-request-4x.png" alt="" style="--i: 5; --r: 7deg; --stack-x: 50.3%; --stack-y: 50.5%" />
+            <img class="interaction-tile interaction-tile-compliance" src="./assets/interaction-compliance-4x.png" alt="" style="--i: 6; --r: -9deg; --stack-x: 50%; --stack-y: 50%" />
+            <img class="interaction-tile interaction-tile-clock" src="./assets/interaction-clock-4x.png" alt="" style="--i: 7; --r: 8deg; --stack-x: 50%; --stack-y: 50%" />
+            <img class="interaction-demo-copy" src="./assets/interaction-copy-4x.png" alt="" />
+          </div>
+          <div class="showcase-card showcase-card-systems systems-card">
+            <img class="systems-card-image" src="./assets/showcase-card-systems-4x.png" alt="" />
+            <span class="systems-card-title">SYSTEMS DESIGN</span>
+          </div>
+          <img class="showcase-card showcase-card-ai" src="./assets/showcase-card-ai-4x.png" alt="" />
+        </div>
+        <span class="showcase-hint" aria-hidden="true"><span class="showcase-hint-desktop">PLAY WITH IT ↗</span><span class="showcase-hint-mobile">TAP TO MAKE THEM BEHAVE</span></span>
+        <span class="showcase-cursor-pill" aria-hidden="true">Click to make the pixels behave</span>
+      </div>
+
+      <section class="selected-work" id="selected-work" aria-labelledby="work-title">
+        <div class="selected-work-art" aria-hidden="true">
+          <div class="selected-work-slice-wrap" data-case-study-hover>
+            <svg class="selected-work-slice" viewBox="0 360 5760 4507" xmlns="http://www.w3.org/2000/svg">
+              <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
+            </svg>
+            <div class="employee-demo employee-demo-art" aria-hidden="true">
+              <img class="employee-demo-state employee-demo-confirm" src="./assets/employee-clockin-normal-2x.png?v=20260924-3" alt="" />
+              <img class="employee-demo-state employee-demo-success" src="./assets/employee-clockin-away-2x.png?v=20260924-3" alt="" />
+              <span class="employee-demo-pointer"></span>
+              <span class="employee-demo-pulse employee-demo-pulse-one"></span>
+              <span class="employee-demo-pulse employee-demo-pulse-two"></span>
+              <span class="employee-demo-pulse employee-demo-pulse-three"></span>
+            </div>
+            <span class="case-study-pill" aria-hidden="true">View case study</span>
+          </div>
+          <div class="selected-work-slice-wrap" data-case-study-hover>
+            <svg class="selected-work-slice" viewBox="0 5019 5760 3998" xmlns="http://www.w3.org/2000/svg">
+              <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
+            </svg>
+            <div class="vacation-demo vacation-demo-art" aria-hidden="true">
+              <img class="vacation-demo-state vacation-state-availability" src="./assets/vacation-state-availability-2x.png?v=20260924-3" alt="" />
+              <img class="vacation-demo-state vacation-state-bookings" src="./assets/vacation-state-bookings-2x.png?v=20260924-3" alt="" />
+              <img class="vacation-demo-state vacation-state-reviews" src="./assets/vacation-state-reviews-2x.png?v=20260924-3" alt="" />
+              <img class="vacation-demo-state vacation-state-media" src="./assets/vacation-state-media-2x.png?v=20260924-3" alt="" />
+              <img class="vacation-demo-state vacation-state-amenities" src="./assets/vacation-state-amenities-2x.png?v=20260924-3" alt="" />
+              <img class="vacation-demo-state vacation-state-smart-lock" src="./assets/vacation-state-smart-lock-2x.png?v=20260924-3" alt="" />
+              <span class="vacation-demo-pointer"></span>
+              <span class="vacation-demo-pulse vacation-demo-pulse-one" style="--delay: 0s"></span>
+              <span class="vacation-demo-pulse vacation-demo-pulse-two" style="--delay: 3.36s"></span>
+              <span class="vacation-demo-pulse vacation-demo-pulse-three" style="--delay: 6.72s"></span>
+              <span class="vacation-demo-pulse vacation-demo-pulse-four" style="--delay: 10.08s"></span>
+              <span class="vacation-demo-pulse vacation-demo-pulse-five" style="--delay: 13.44s"></span>
+              <span class="vacation-demo-pulse vacation-demo-pulse-six" style="--delay: 16.8s"></span>
+            </div>
+            <span class="case-study-pill" aria-hidden="true">View case study</span>
+          </div>
+          <div class="selected-work-slice-wrap" data-case-study-hover>
+            <svg class="selected-work-slice" viewBox="0 9176 5760 4312" xmlns="http://www.w3.org/2000/svg">
+              <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
+            </svg>
+            <div class="moments-demo moments-demo-art" aria-hidden="true">
+              <img class="moments-demo-base" src="./assets/moments-state-base-2x.png?v=20260924-1" alt="" />
+              <img class="moments-demo-state" style="--delay: 0s" src="./assets/moments-state-background-2x.png?v=20260924-2" alt="" />
+              <img class="moments-demo-state" style="--delay: 8s" src="./assets/moments-state-text-2x.png?v=20260924-2" alt="" />
+              <img class="moments-demo-state" style="--delay: 16s" src="./assets/moments-state-music-2x.png?v=20260924-2" alt="" />
+              <img class="moments-demo-state" style="--delay: 24s" src="./assets/moments-state-tag-2x.png?v=20260924-2" alt="" />
+              <img class="moments-demo-state" style="--delay: 32s" src="./assets/moments-state-emoji-2x.png?v=20260924-2" alt="" />
+              <span class="moments-demo-pointer"></span>
+            </div>
+            <span class="case-study-pill" aria-hidden="true">View case study</span>
+          </div>
+        </div>
+        <div class="selected-work-content">
+          <div class="selected-work-intro">
+            <span class="section-number">02</span>
+            <div>
+              <h2 id="work-title">Selected Work</h2>
+              <p>Things I’ve spent an unreasonable amount of time thinking about.</p>
+            </div>
+          </div>
+          <div class="project-list">
+            <article class="project">
+              <div class="project-image-wrap" data-case-study-hover>
+                <svg class="project-image" viewBox="320 870 5120 3515" role="img" aria-label="Employee Hub dashboard interface" xmlns="http://www.w3.org/2000/svg">
+                  <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
+                </svg>
+                <div class="employee-demo" aria-hidden="true">
+                  <img class="employee-demo-state employee-demo-confirm" src="./assets/employee-clockin-normal-2x.png?v=20260924-3" alt="" />
+                  <img class="employee-demo-state employee-demo-success" src="./assets/employee-clockin-away-2x.png?v=20260924-3" alt="" />
+                  <span class="employee-demo-pointer"></span>
+                  <span class="employee-demo-pulse employee-demo-pulse-one"></span>
+                  <span class="employee-demo-pulse employee-demo-pulse-two"></span>
+                  <span class="employee-demo-pulse employee-demo-pulse-three"></span>
+                </div>
+                <span class="case-study-pill" aria-hidden="true">View case study</span>
+              </div>
+              <h3>Employee Hub</h3>
+              <p>Everything work, right where employees need it.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR tech</li><li>Product design</li><li>Complex systems</li></ul>
+            </article>
+            <article class="project">
+              <div class="project-image-wrap" data-case-study-hover>
+                <svg class="project-image" viewBox="320 5019 5120 3525" role="img" aria-label="Vacation Rentals apartment dashboard interface" xmlns="http://www.w3.org/2000/svg">
+                  <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
+                </svg>
+                <div class="vacation-demo" aria-hidden="true">
+                  <img class="vacation-demo-state vacation-state-availability" src="./assets/vacation-state-availability-2x.png?v=20260924-3" alt="" />
+                  <img class="vacation-demo-state vacation-state-bookings" src="./assets/vacation-state-bookings-2x.png?v=20260924-3" alt="" />
+                  <img class="vacation-demo-state vacation-state-reviews" src="./assets/vacation-state-reviews-2x.png?v=20260924-3" alt="" />
+                  <img class="vacation-demo-state vacation-state-media" src="./assets/vacation-state-media-2x.png?v=20260924-3" alt="" />
+                  <img class="vacation-demo-state vacation-state-amenities" src="./assets/vacation-state-amenities-2x.png?v=20260924-3" alt="" />
+                  <img class="vacation-demo-state vacation-state-smart-lock" src="./assets/vacation-state-smart-lock-2x.png?v=20260924-3" alt="" />
+                  <span class="vacation-demo-pointer"></span>
+                  <span class="vacation-demo-pulse vacation-demo-pulse-one" style="--delay: 0s"></span>
+                  <span class="vacation-demo-pulse vacation-demo-pulse-two" style="--delay: 3.36s"></span>
+                  <span class="vacation-demo-pulse vacation-demo-pulse-three" style="--delay: 6.72s"></span>
+                  <span class="vacation-demo-pulse vacation-demo-pulse-four" style="--delay: 10.08s"></span>
+                  <span class="vacation-demo-pulse vacation-demo-pulse-five" style="--delay: 13.44s"></span>
+                  <span class="vacation-demo-pulse vacation-demo-pulse-six" style="--delay: 16.8s"></span>
+                </div>
+                <span class="case-study-pill" aria-hidden="true">View case study</span>
+              </div>
+              <h3>Vacation Rentals</h3>
+              <p>Making the journey from finding a stay to managing it feel effortless.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>Travel tech</li><li>Product design</li><li>Booking experience</li></ul>
+            </article>
+            <article class="project">
+              <div class="project-image-wrap" data-case-study-hover>
+                <svg class="project-image" viewBox="320 9176 5120 3510" role="img" aria-label="Moments postcard editor interface" xmlns="http://www.w3.org/2000/svg">
+                  <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
+                </svg>
+                <div class="moments-demo" aria-hidden="true">
+                  <img class="moments-demo-base" src="./assets/moments-state-base-2x.png?v=20260924-1" alt="" />
+                  <img class="moments-demo-state" style="--delay: 0s" src="./assets/moments-state-background-2x.png?v=20260924-2" alt="" />
+                  <img class="moments-demo-state" style="--delay: 8s" src="./assets/moments-state-text-2x.png?v=20260924-2" alt="" />
+                  <img class="moments-demo-state" style="--delay: 16s" src="./assets/moments-state-music-2x.png?v=20260924-2" alt="" />
+                  <img class="moments-demo-state" style="--delay: 24s" src="./assets/moments-state-tag-2x.png?v=20260924-2" alt="" />
+                  <img class="moments-demo-state" style="--delay: 32s" src="./assets/moments-state-emoji-2x.png?v=20260924-2" alt="" />
+                  <span class="moments-demo-pointer"></span>
+                </div>
+                <span class="case-study-pill" aria-hidden="true">View case study</span>
+              </div>
+              <h3>Moments</h3>
+              <p>Turning everyday experiences into moments worth discovering.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>Discovery</li><li>Experience design</li><li>Product design</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="more-work" id="more-work" aria-labelledby="more-work-title">
+        <div class="more-work-inner">
+          <div class="more-work-intro">
+            <span class="section-number">03.</span>
+            <div>
+              <h2 id="more-work-title">More Work</h2>
+              <p>A few more things I've shipped.</p>
+            </div>
+          </div>
+
+          <div class="more-work-filters" role="group" aria-label="Filter more work">
+            <button class="more-work-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="more-work-filter" type="button" data-filter="designs" aria-pressed="false">Designs</button>
+            <button class="more-work-filter" type="button" data-filter="ai" aria-pressed="false">Built with AI</button>
+            <button class="more-work-filter" type="button" data-filter="landing" aria-pressed="false">Landing pages</button>
+          </div>
+
+          <div class="more-work-grid" id="more-work-grid">
+            <article class="more-work-card" data-categories="designs ai">
+              <div class="more-work-artwork">
+                <img src="./assets/more-ally-device-4x.png" width="2000" height="1534" alt="Ally AI conversation interface displayed on a tablet" loading="lazy" />
+              </div>
+              <h3>Ally AI</h3>
+              <p>Workplace answers, without the digging.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Conversational UX</li><li>HR Tech</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs ai">
+              <div class="more-work-artwork">
+                <img src="./assets/more-rentlens-device-4x.png" width="2000" height="1534" alt="Rentlens apartment review interface displayed on a tablet" loading="lazy" />
+              </div>
+              <h3>Rentlens</h3>
+              <p>Know what it’s like to live there, before you do.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Product design</li><li>PropTech</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs landing">
+              <div class="more-work-artwork">
+                <img src="./assets/more-discova-device-4x.png" width="2000" height="1534" alt="Discova Trips travel landing page displayed on a tablet" loading="lazy" />
+              </div>
+              <h3>Discova trips</h3>
+              <p>Making workplace policies easier to manage — and easier to find.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR tech</li><li>Information architecture</li><li>Product design</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs">
+              <div class="more-work-artwork">
+                <img src="./assets/more-tasks-device-4x.png" width="2000" height="1534" alt="Task Manager dashboard displayed on a tablet" loading="lazy" />
+              </div>
+              <h3>Task manager</h3>
+              <p>Keeping work moving, without the usual task chaos.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>Productivity</li><li>Workflow design</li><li>Product design</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-discova-landing-4x.png" width="2000" height="1534" alt="Hotel operations landing page displayed on a tablet" loading="lazy" /></div>
+              <h3>Discova trips</h3>
+              <p>Making workplace policies easier to manage — and easier to find.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR tech</li><li>Information architecture</li><li>Product design</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-learning-dashboard-4x.png" width="2000" height="1534" alt="My Learning dashboard displayed on a tablet" loading="lazy" /></div>
+              <h3>My learning</h3>
+              <p>Keeping work moving, without the usual task chaos.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>Productivity</li><li>Workflow design</li><li>Product design</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-discova-journey-4x.png" width="2000" height="1534" alt="Task workflow landing page displayed on a tablet" loading="lazy" /></div>
+              <h3>Discova trips</h3>
+              <p>Making workplace policies easier to manage — and easier to find.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR tech</li><li>Information architecture</li><li>Product design</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-learning-mobile-4x.png" width="2000" height="1534" alt="Hotel guest mobile access landing page displayed on a tablet" loading="lazy" /></div>
+              <h3>My learning</h3>
+              <p>Keeping work moving, without the usual task chaos.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>Productivity</li><li>Workflow design</li><li>Product design</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-discova-dashboard-4x.png" width="2000" height="1534" alt="Leave management landing page displayed on a tablet" loading="lazy" /></div>
+              <h3>Discova trips</h3>
+              <p>Making workplace policies easier to manage — and easier to find.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR tech</li><li>Information architecture</li><li>Product design</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs ai" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-learning-ally-4x.png" width="2000" height="1534" alt="Ally AI landing page displayed on a tablet" loading="lazy" /></div>
+              <h3>My learning</h3>
+              <p>Keeping work moving, without the usual task chaos.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>Productivity</li><li>Workflow design</li><li>Product design</li></ul>
+            </article>
+          </div>
+          <button class="more-work-see-all" type="button" aria-expanded="false" aria-controls="more-work-grid">See all</button>
+        </div>
+      </section>
+
+      <section class="about-me" id="about" aria-labelledby="about-title">
+        <div class="about-me-inner">
+          <div class="about-me-intro">
+            <span class="section-number">04.</span>
+            <div>
+              <h2 id="about-title">A little about me</h2>
+              <p>Plot twist: I’m not always staring at a screen.</p>
+            </div>
+          </div>
+
+          <div class="about-me-body">
+            <div class="about-me-copy">
+              <p class="about-me-lead">Hi, I’m <strong>Esther</strong>, a Product Designer turned <strong>Design Engineer with 4+ years of experience</strong>, mostly designing SaaS products and untangling complex workflows, multiple user roles, edge cases, and messy requirements into experiences that feel considerably simpler.</p>
+              <p>I’ve worked across <strong>Seven Apex Studio, OBST Solar Power Company, and Uzel</strong>, and I currently work at <strong><a class="about-me-link" href="https://www.gopaddi.com/" target="_blank" rel="noopener noreferrer">Gopaddi Technologies</a></strong>, designing and building products across travel, workforce management, AI, and business operations.</p>
+              <p>I love using <strong>storytelling in my design process</strong>—thinking about how each screen, interaction, and moment connects to create an experience that naturally carries the user from one point to the next. I’m also drawn to anything that lets me dip into my creativity, with <strong class="about-me-colour">colour as one of my favourite weapons</strong> for giving products personality and making them pop.</p>
+              <p>These days, I’m taking my work beyond Figma, using <strong>AI-assisted development</strong> to turn my designs into working experiences.</p>
+              <p><strong>When the laptop closes...</strong> I’m probably singing, listening to music, exploring somewhere new, or picking up another hobby I absolutely didn’t need.</p>
+            </div>
+
+            <div class="about-me-photos" aria-label="Photos of Esther" data-active="0">
+              <button class="about-photo" type="button" aria-label="Show Esther smiling in a navy top" aria-pressed="true"><img src="./assets/about-photo-main-figma-source.png" width="940" height="1672" alt="" loading="lazy" /></button>
+              <button class="about-photo" type="button" aria-label="Show Esther outdoors in a pink shirt" aria-pressed="false"><img src="./assets/about-photo-2-figma-source.png" width="1086" height="1448" alt="" loading="lazy" /></button>
+              <button class="about-photo" type="button" aria-label="Show a close-up portrait of Esther" aria-pressed="false"><img src="./assets/about-photo-3-figma-source.png" width="1086" height="1448" alt="" loading="lazy" /></button>
+              <button class="about-photo" type="button" aria-label="Show Esther smiling in a red top" aria-pressed="false"><img src="./assets/about-photo-4-figma-source.png" width="1086" height="1448" alt="" loading="lazy" /></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner">
+          <div class="contact-intro">
+            <h2 id="contact-title">You made it all the way down here.</h2>
+            <div class="contact-details">
+              <div class="contact-copy">
+                <p>Either you're very thorough...</p>
+                <p>Or we should probably talk</p>
+              </div>
+              <a class="contact-email" href="mailto:estherbassey4502@gmail.com">Send me an email</a>
+              <div class="contact-socials" aria-label="Social platforms">
+                <a class="contact-social contact-linkedin" href="https://www.linkedin.com/in/esther-bassey-530497216/" target="_blank" rel="noopener noreferrer" aria-label="Esther Bassey on LinkedIn"><img src="./assets/social-linkedin.svg" width="40" height="40" alt="" /></a>
+                <a class="contact-social contact-x" href="https://x.com/estybayy" target="_blank" rel="noopener noreferrer" aria-label="Esther Bassey on X"><img src="./assets/social-x.svg" width="15" height="13" alt="" /></a>
+              </div>
+            </div>
+          </div>
+          <ul class="contact-tags" aria-label="Things I do">
+            <li>UNTANGLING COMPLEXITY</li>
+            <li>MAKING PIXELS BEHAVE</li>
+            <li>PROTOTYPING</li>
+            <li>BUILDING INTERFACES</li>
+            <li>THINKING IN SYSTEMS</li>
+            <li>OBSESSING OVER DETAILS</li>
+            <li>DESIGNING INTERACTIONS</li>
+            <li>ASKING “WHAT IF?”</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js?v=20260925-16"></script>
+  </body>
+</html>
