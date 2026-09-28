@@ -16,7 +16,7 @@
         document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
     </script>
-  <link rel="stylesheet" href="./styles.css?v=20260926-56" />
+  <link rel="stylesheet" href="./styles.css?v=20260927-2" />
   </head>
   <body>
     <header class="site-header">
@@ -91,11 +91,12 @@
       </div>
 
       <section class="selected-work" id="selected-work" aria-labelledby="work-title">
-        <div class="selected-work-art" aria-hidden="true">
+        <div class="selected-work-art">
           <div class="selected-work-slice-wrap" data-case-study-hover>
             <svg class="selected-work-slice" viewBox="0 360 5760 4507" xmlns="http://www.w3.org/2000/svg">
               <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
             </svg>
+            <a class="case-study-card-link" href="./project-case-study.html?project=employee-hub" aria-label="View Employee Hub case study"></a>
             <div class="employee-demo employee-demo-art" aria-hidden="true">
               <img class="employee-demo-state employee-demo-confirm" src="./assets/employee-clockin-normal-2x.png?v=20260924-3" alt="" />
               <img class="employee-demo-state employee-demo-success" src="./assets/employee-clockin-away-2x.png?v=20260924-3" alt="" />
@@ -110,6 +111,7 @@
             <svg class="selected-work-slice" viewBox="0 5019 5760 3998" xmlns="http://www.w3.org/2000/svg">
               <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
             </svg>
+            <a class="case-study-card-link" href="./vacation-rentals.html" aria-label="View Vacation Rentals case study"></a>
             <div class="vacation-demo vacation-demo-art" aria-hidden="true">
               <img class="vacation-demo-state vacation-state-availability" src="./assets/vacation-state-availability-2x.png?v=20260924-3" alt="" />
               <img class="vacation-demo-state vacation-state-bookings" src="./assets/vacation-state-bookings-2x.png?v=20260924-3" alt="" />
@@ -131,6 +133,7 @@
             <svg class="selected-work-slice" viewBox="0 9176 5760 4312" xmlns="http://www.w3.org/2000/svg">
               <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
             </svg>
+            <a class="case-study-card-link" href="./project-case-study.html?project=moments" aria-label="View Moments case study"></a>
             <div class="moments-demo moments-demo-art" aria-hidden="true">
               <img class="moments-demo-base" src="./assets/moments-state-base-2x.png?v=20260924-1" alt="" />
               <img class="moments-demo-state" style="--delay: 0s" src="./assets/moments-state-background-2x.png?v=20260924-2" alt="" />
@@ -157,6 +160,7 @@
                 <svg class="project-image" viewBox="320 870 5120 3515" role="img" aria-label="Employee Hub dashboard interface" xmlns="http://www.w3.org/2000/svg">
                   <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
                 </svg>
+                <a class="case-study-card-link" href="./project-case-study.html?project=employee-hub" aria-label="View Employee Hub case study"></a>
                 <div class="employee-demo" aria-hidden="true">
                   <img class="employee-demo-state employee-demo-confirm" src="./assets/employee-clockin-normal-2x.png?v=20260924-3" alt="" />
                   <img class="employee-demo-state employee-demo-success" src="./assets/employee-clockin-away-2x.png?v=20260924-3" alt="" />
@@ -167,7 +171,7 @@
                 </div>
                 <span class="case-study-pill" aria-hidden="true">View case study</span>
               </div>
-              <h3>Employee Hub</h3>
+              <h3><a href="./project-case-study.html?project=employee-hub">Employee Hub</a></h3>
               <p>Everything work, right where employees need it.</p>
               <ul class="project-tags" aria-label="Project categories"><li>HR tech</li><li>Product design</li><li>Complex systems</li></ul>
             </article>
@@ -176,6 +180,7 @@
                 <svg class="project-image" viewBox="320 5019 5120 3525" role="img" aria-label="Vacation Rentals apartment dashboard interface" xmlns="http://www.w3.org/2000/svg">
                   <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
                 </svg>
+                <a class="case-study-card-link" href="./vacation-rentals.html" aria-label="View Vacation Rentals case study"></a>
                 <div class="vacation-demo" aria-hidden="true">
                   <img class="vacation-demo-state vacation-state-availability" src="./assets/vacation-state-availability-2x.png?v=20260924-3" alt="" />
                   <img class="vacation-demo-state vacation-state-bookings" src="./assets/vacation-state-bookings-2x.png?v=20260924-3" alt="" />
@@ -193,7 +198,7 @@
                 </div>
                 <span class="case-study-pill" aria-hidden="true">View case study</span>
               </div>
-              <h3>Vacation Rentals</h3>
+              <h3><a href="./vacation-rentals.html">Vacation Rentals</a></h3>
               <p>Making the journey from finding a stay to managing it feel effortless.</p>
               <ul class="project-tags" aria-label="Project categories"><li>Travel tech</li><li>Product design</li><li>Booking experience</li></ul>
             </article>
@@ -202,6 +207,7 @@
                 <svg class="project-image" viewBox="320 9176 5120 3510" role="img" aria-label="Moments postcard editor interface" xmlns="http://www.w3.org/2000/svg">
                   <image href="./assets/selected-work-4x.png" width="5760" height="13488" />
                 </svg>
+                <a class="case-study-card-link" href="./project-case-study.html?project=moments" aria-label="View Moments case study"></a>
                 <div class="moments-demo" aria-hidden="true">
                   <img class="moments-demo-base" src="./assets/moments-state-base-2x.png?v=20260924-1" alt="" />
                   <img class="moments-demo-state" style="--delay: 0s" src="./assets/moments-state-background-2x.png?v=20260924-2" alt="" />
@@ -213,11 +219,57 @@
                 </div>
                 <span class="case-study-pill" aria-hidden="true">View case study</span>
               </div>
-              <h3>Moments</h3>
+              <h3><a href="./project-case-study.html?project=moments">Moments</a></h3>
               <p>Turning everyday experiences into moments worth discovering.</p>
               <ul class="project-tags" aria-label="Project categories"><li>Discovery</li><li>Experience design</li><li>Product design</li></ul>
             </article>
           </div>
+        </div>
+        <div class="selected-rentlens-content">
+            <article class="project" id="rentlens-project">
+              <div class="project-image-wrap">
+                <img class="project-image" src="./assets/selected-rentlens-background-4x.png" width="5120" height="3520" alt="Rentlens property discovery interface with tenant reviews and AI summaries" loading="lazy" />
+                <a class="case-study-card-link" href="./project-case-study.html?project=rentlens" aria-label="View Rentlens case study"></a>
+                <div class="rentlens-scroll" role="region" aria-label="Automatically scrolling Rentlens reviews preview">
+                  <div class="rentlens-scroll-content">
+                    <img src="./assets/rentlens-reviews-full-4x.png?v=2" width="4480" height="4656" alt="Four Palm Grove tenant review summaries covering security, water supply, power costs, generator noise, and internet reliability." loading="lazy" />
+                    <svg class="rentlens-scroll-intro" viewBox="320 516 4480 656" aria-hidden="true"><image href="./assets/selected-rentlens-background-4x.png" width="5120" height="3520" /></svg>
+                    <div class="rentlens-address-tags" aria-label="Suggested addresses">
+                      <span>Palm Grove, Lekki Phase 1, Admiralty Way</span>
+                      <span>Victoria Island, Ozumba Mbadiwe Avenue</span>
+                      <span>Ikoyi, Banana Island Road</span>
+                      <span>Yaba, Herbert Macaulay Way</span>
+                    </div>
+                    <div class="rentlens-review-grid">
+                      <div class="rentlens-review-card">
+                        <div class="rentlens-review-heading"><div>Palm Grove Residences<small>Lekki Phase 1</small><small class="rentlens-review-address">⌖ 14 Adebayo Doherty Road</small></div><div class="rentlens-review-rating">⭐ 3/5<small>Based on 18 reviews</small></div></div>
+                        <div class="rentlens-review-summary"><div>AI summary</div><p><span>Residents praise Palm Grove for its safety,</span><span>cleanliness, and attentive on-site staff.</span><span>Electricity costs can be high, and generator</span><span>noise may be disruptive. Internet speeds</span><span>also vary depending on the floor.</span></p></div>
+                        <div class="rentlens-review-tags"><span>Good road access</span><span>Water supply</span><span>Reliable power</span><span>Security</span></div>
+                      </div>
+                      <div class="rentlens-review-card">
+                        <div class="rentlens-review-heading"><div>Palm Grove Residences<small>Lekki Phase 1</small><small class="rentlens-review-address">⌖ 14 Adebayo Doherty Road</small></div><div class="rentlens-review-rating">⭐ 3/5<small>Based on 18 reviews</small></div></div>
+                        <div class="rentlens-review-summary"><div>AI summary</div><p><span>Residents describe a safe, well-maintained</span><span>property with reliable water and helpful staff.</span><span>Electricity costs and evening generator noise</span><span>are common concerns. Internet performance</span><span>can differ noticeably between floors.</span></p></div>
+                        <div class="rentlens-review-tags"><span>Easy road access</span><span>Consistent water supply</span><span>Dependable electricity</span></div>
+                      </div>
+                      <div class="rentlens-review-card">
+                        <div class="rentlens-review-heading"><div>Palm Grove Residences<small>Lekki Phase 1</small><small class="rentlens-review-address">⌖ 14 Adebayo Doherty Road</small></div><div class="rentlens-review-rating">⭐ 3/5<small>Based on 18 reviews</small></div></div>
+                        <div class="rentlens-review-summary"><div>AI summary</div><p><span>Tenants describe a secure, well-kept building</span><span>with dependable water and responsive staff.</span><span>Power costs and evening generator noise</span><span>are the main trade-offs. Internet reliability</span><span>varies depending on the floor.</span></p></div>
+                        <div class="rentlens-review-tags"><span>Good road access</span><span>Water supply</span><span>Reliable power</span><span>Security</span></div>
+                      </div>
+                      <div class="rentlens-review-card">
+                        <div class="rentlens-review-heading"><div>Palm Grove Residences<small>Lekki Phase 1</small><small class="rentlens-review-address">⌖ 14 Adebayo Doherty Road</small></div><div class="rentlens-review-rating">⭐ 3/5<small>Based on 18 reviews</small></div></div>
+                        <div class="rentlens-review-summary"><div>AI summary</div><p><span>Tenants describe a secure, well-kept building</span><span>with dependable water and responsive staff.</span><span>Power costs and evening generator noise</span><span>are the main trade-offs. Internet reliability</span><span>varies depending on the floor.</span></p></div>
+                        <div class="rentlens-review-tags"><span>Good road access</span><span>Water supply</span><span>Reliable power</span><span>Security</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="rentlens-demo-pointer" aria-hidden="true"></span>
+              </div>
+              <h3><a href="./project-case-study.html?project=rentlens">Rentlens</a></h3>
+              <p>Know what it’s like to live there, before you do.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Product design</li><li>PropTech</li></ul>
+            </article>
         </div>
       </section>
 
@@ -278,30 +330,6 @@
               <ul class="project-tags" aria-label="Project categories"><li>Hospitality Tech</li><li>Automation</li><li>Landing Page</li></ul>
             </article>
             <article class="more-work-card" data-categories="designs ai" data-expanded-card hidden>
-              <div class="more-work-artwork"><img src="./assets/more-rentlens-device-4x.png" width="2000" height="1534" alt="Rentlens apartment review interface displayed on a tablet" loading="lazy" /></div>
-              <h3>Rentlens</h3>
-              <p>Know what it’s like to live there, before you do.</p>
-              <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Product design</li><li>PropTech</li></ul>
-            </article>
-            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
-              <div class="more-work-artwork"><img src="./assets/more-discova-device-4x.png" width="2000" height="1534" alt="Discova Trips travel landing page displayed on a tablet" loading="lazy" /></div>
-              <h3>Discova Trips</h3>
-              <p>Turning travel memberships into a world worth exploring.</p>
-              <ul class="project-tags" aria-label="Project categories"><li>Travel Tech</li><li>Landing Page</li><li>Visual Design</li></ul>
-            </article>
-            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
-              <div class="more-work-artwork"><img src="./assets/more-learning-mobile-4x.png" width="2000" height="1534" alt="Hotel guest mobile access landing page displayed on a tablet" loading="lazy" /></div>
-              <h3><a href="https://www.gopaddi.com/en/digital-lock" target="_blank" rel="noopener noreferrer">Digital Lock &amp; Self Check-in</a></h3>
-              <p>From arrival to room access, without stopping at the front desk.</p>
-              <ul class="project-tags" aria-label="Project categories"><li>Hospitality Tech</li><li>Guest Experience</li><li>Landing Page</li></ul>
-            </article>
-            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
-              <div class="more-work-artwork"><img src="./assets/more-discova-dashboard-4x.png" width="2000" height="1534" alt="Leave management landing page displayed on a tablet" loading="lazy" /></div>
-              <h3><a href="https://www.gopaddi.com/en/workforce/leave-management" target="_blank" rel="noopener noreferrer">Leave Management</a></h3>
-              <p>Time off, without the back-and-forth.</p>
-              <ul class="project-tags" aria-label="Project categories"><li>HR Tech</li><li>Leave Management</li><li>Landing Page</li></ul>
-            </article>
-            <article class="more-work-card" data-categories="designs ai" data-project-hidden data-expanded-card hidden>
               <div class="more-work-artwork">
                 <div class="ally-chat-visual">
                   <img src="./assets/more-ally-device-4x.png" width="2000" height="1534" alt="Ally AI conversation interface displayed on a tablet" loading="lazy" />
@@ -329,6 +357,30 @@
               <h3>Ally AI</h3>
               <p>Workplace answers, without the digging.</p>
               <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Conversational UX</li><li>HR Tech</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-employee-hub-landing-4x.png" width="2000" height="1534" alt="Employee Hub landing page displayed on a tablet" loading="lazy" /></div>
+              <h3>Employee Hub Landing Page</h3>
+              <p>Bringing everyday HR essentials together, so employees can focus on their work.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR Tech</li><li>Employee Experience</li><li>Landing Page</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-learning-mobile-4x.png" width="2000" height="1534" alt="Hotel guest mobile access landing page displayed on a tablet" loading="lazy" /></div>
+              <h3><a href="https://www.gopaddi.com/en/digital-lock" target="_blank" rel="noopener noreferrer">Digital Lock &amp; Self Check-in</a></h3>
+              <p>From arrival to room access, without stopping at the front desk.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>Hospitality Tech</li><li>Guest Experience</li><li>Landing Page</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-discova-dashboard-4x.png" width="2000" height="1534" alt="Leave management landing page displayed on a tablet" loading="lazy" /></div>
+              <h3><a href="https://www.gopaddi.com/en/workforce/leave-management" target="_blank" rel="noopener noreferrer">Leave Management</a></h3>
+              <p>Time off, without the back-and-forth.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR Tech</li><li>Leave Management</li><li>Landing Page</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs ai" data-project-hidden data-expanded-card hidden>
+              <div class="more-work-artwork"><img src="./assets/more-rentlens-device-4x.png" width="2000" height="1534" alt="Rentlens apartment review interface displayed on a tablet" loading="lazy" /></div>
+              <h3>Rentlens</h3>
+              <p>Know what it’s like to live there, before you do.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Product design</li><li>PropTech</li></ul>
             </article>
           </div>
           <button class="more-work-see-all" type="button" aria-expanded="false" aria-controls="more-work-grid">See all</button>
@@ -394,6 +446,6 @@
       </section>
     </main>
 
-    <script src="./script.js?v=20260926-23"></script>
+    <script src="./script.js?v=20260927-2"></script>
   </body>
 </html>

@@ -1,4 +1,44 @@
 const root = document.documentElement;
+// Cursor-led review tour. Wheel and touch input continue scrolling the page.
+const rentlensScroll = document.querySelector('.rentlens-scroll');
+if (rentlensScroll) {
+  const frame = rentlensScroll.parentElement;
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const image = rentlensScroll.querySelector('img');
+  let animation = 0;
+  let visible = false;
+  const stopTour = () => {
+    cancelAnimationFrame(animation);
+    animation = 0;
+    frame.classList.remove('rentlens-demo-playing');
+  };
+  const play = () => {
+    if (!visible || motion.matches || animation || !image.complete || !image.naturalWidth) return;
+    const start = performance.now();
+    frame.classList.add('rentlens-demo-playing');
+    const tick = now => {
+      const elapsed = (now - start) % 13000;
+      const progress = Math.min(1, Math.max(0, (elapsed - 1800) / 6500));
+      const eased = progress * progress * (3 - 2 * progress);
+      const reset = Math.min(1, Math.max(0, (elapsed - 10800) / 1400));
+      const position = elapsed < 10800 ? eased : 1 - reset * reset * (3 - 2 * reset);
+      rentlensScroll.scrollTop = (rentlensScroll.scrollHeight - rentlensScroll.clientHeight) * position;
+      animation = requestAnimationFrame(tick);
+    };
+    animation = requestAnimationFrame(tick);
+  };
+  const observer = new IntersectionObserver(entries => {
+    visible = entries[0].isIntersecting;
+    if (visible) play(); else stopTour();
+  }, { threshold: .3 });
+  observer.observe(rentlensScroll);
+  image.addEventListener('load', play);
+  motion.addEventListener('change', () => {
+    stopTour();
+    if (motion.matches) rentlensScroll.scrollTop = 0;
+    else play();
+  });
+}
 const themeButton = document.querySelector('.theme-button');
 const colorPreference = window.matchMedia('(prefers-color-scheme: dark)');
 

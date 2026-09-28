@@ -1,6 +1,6 @@
 @font-face {
   font-family: "General Sans";
-  src: url("../GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Variable.woff2") format("woff2");
+  src: url("./assets/GeneralSans-Variable.woff2") format("woff2");
   font-style: normal;
   font-weight: 200 700;
   font-display: swap;
@@ -31,6 +31,7 @@ body {
 }
 
 a { color: inherit; text-decoration: none; }
+::selection { background: #000; color: #fff; }
 
 button { font: inherit; }
 
@@ -465,7 +466,111 @@ button { font: inherit; }
 .selected-work-intro p { margin: 8px 0 0; color: var(--muted); font-size: 16px; }
 .project-list { display: flex; flex-direction: column; gap: 48px; }
 .project-image-wrap { position: relative; overflow: hidden; border-radius: 24px; cursor: pointer; }
+.case-study-card-link { position: absolute; inset: 0; z-index: 8; border-radius: 24px; }
+.case-study-card-link:focus-visible { outline: 3px solid var(--ink); outline-offset: -4px; }
 .project-image { display: block; width: 100%; height: auto; border-radius: 24px; overflow: hidden; background: var(--soft); }
+.rentlens-scroll {
+  position: absolute;
+  left: 6.25%;
+  right: 6.25%;
+  top: 14.6591%;
+  bottom: 4.5455%;
+  overflow: hidden;
+  background: #fafafa;
+  border-radius: 0 0 12px 12px;
+  scrollbar-width: none;
+  pointer-events: none;
+}
+.selected-rentlens-content { max-width: 1760px; margin: 48px auto 0; padding: 0 clamp(24px, 5.55vw, 80px); }
+@media (max-width: 900px) {
+  .selected-rentlens-content { padding: 0 16px; }
+  :root:not([data-theme="dark"]) .selected-rentlens-content { margin-top: -32px; }
+}
+.rentlens-scroll::-webkit-scrollbar { display: none; }
+.rentlens-scroll-content { position: relative; container-type: inline-size; }
+.rentlens-address-tags {
+  position: absolute;
+  top: 22.16495%;
+  left: 9.10714%;
+  width: 83.75%;
+  height: 2.4055%;
+  display: flex;
+  align-items: center;
+  gap: .44643cqw;
+  background: #fff;
+  color: #525866;
+  font: 400 1.07143cqw/1.42857cqw Arial, sans-serif;
+  letter-spacing: -.02143cqw;
+}
+.rentlens-address-tags span {
+  flex: 0 0 auto;
+  width: max-content;
+  padding: .26786cqw .53571cqw;
+  border: 1px solid #eff0f3;
+  border-radius: .53571cqw;
+  white-space: nowrap;
+}
+.rentlens-review-grid {
+  position: absolute;
+  left: 8.57143%;
+  top: 36.08247%;
+  width: 82.85714%;
+  bottom: 3.43643%;
+  padding: .71429cqw;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: max-content;
+  align-content: start;
+  gap: 1.42857cqw;
+  background: #fff;
+  color: #17191c;
+  font: 400 1.25cqw/1.78571cqw Arial, sans-serif;
+  letter-spacing: -.02cqw;
+}
+.rentlens-review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.07143cqw;
+  padding: 1.42857cqw;
+  border: 1px solid #eff0f3;
+  border-radius: 1.78571cqw;
+  background: #fff;
+  box-shadow: 0 .17857cqw .71429cqw #10182812;
+}
+.rentlens-review-heading { display: flex; justify-content: space-between; }
+.rentlens-review-heading small { display: block; font-size: 1.07143cqw; color: #525866; }
+.rentlens-review-heading .rentlens-review-address { color: #969ba2; }
+.rentlens-review-rating { text-align: right; white-space: nowrap; }
+.rentlens-review-rating small { font-size: .89286cqw; }
+.rentlens-review-summary { padding: 1.07143cqw; border-radius: 1.42857cqw; background: #edf4ff; }
+.rentlens-review-summary > div { color: #0055ff; }
+#rentlens-project .rentlens-review-summary p { margin: .71429cqw 0 0; font: inherit; color: inherit; }
+.rentlens-review-summary p span { display: block; white-space: nowrap; }
+.rentlens-review-tags { display: flex; gap: .71429cqw; white-space: nowrap; }
+.rentlens-review-tags span { padding: .17857cqw .35714cqw; border: 1px solid #e6e8ed; border-radius: .44643cqw; font-size: 1.07143cqw; line-height: 1.42857cqw; color: #525866; }
+.rentlens-scroll-content > img { display: block; width: 100%; height: auto; }
+.rentlens-scroll-intro { position: absolute; top: 0; left: 0; display: block; width: 100%; height: auto; }
+.rentlens-scroll:focus-visible { outline: 2px solid #fa7319; outline-offset: -2px; }
+[data-theme="dark"] .rentlens-scroll { filter: brightness(.88); }
+.rentlens-demo-pointer {
+  position: absolute;
+  left: 73%;
+  top: 62%;
+  width: clamp(14px, 1.45vw, 20px);
+  aspect-ratio: 2 / 3;
+  background: url("./assets/demo-cursor.svg") left top / contain no-repeat;
+  filter: drop-shadow(0 2px 3px #0005);
+  pointer-events: none;
+  opacity: 0;
+}
+.rentlens-demo-playing .rentlens-demo-pointer { animation: rentlensCursorScroll 13s ease-in-out infinite; }
+@keyframes rentlensCursorScroll {
+  0%, 100% { opacity: 0; transform: translate(18px, 24px); }
+  10%, 20% { opacity: 1; transform: translate(0, 0); }
+  65%, 76% { opacity: 1; transform: translate(0, -28px); }
+  85%, 95% { opacity: 0; transform: translate(0, -28px); }
+}
+@media (prefers-reduced-motion: reduce) { .rentlens-demo-pointer { display: none; } }
 .employee-demo {
   position: absolute;
   inset: 0;
