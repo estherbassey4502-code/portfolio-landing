@@ -2,121 +2,110 @@ const footerTagField = document.querySelector('.contact-tags');
 const footerSection = document.querySelector('.contact-section');
 const footerTags = footerTagField ? [...footerTagField.querySelectorAll('li')] : [];
 const reduceFooterMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const narrowFooter = window.matchMedia('(max-width: 520px)');
+const footerStartAngles = [-8, 7, -5, 4, 9, -7, 6, -10];
 let footerBodies = [];
 let footerAnimationFrame = 0;
 let footerLastTime = 0;
-let footerIsRunning = false;
 let footerHasLaunched = false;
-const footerRestAngles = [-8, 7, -5, 0, 9, -7, 6, -10];
 
-function positionFooterTags() {
-  if (!footerTagField || !footerTags.length || reduceFooterMotion) return;
-  const field = footerTagField.getBoundingClientRect();
-  footerBodies = footerTags.map((tag, index) => {
-    const width = tag.offsetWidth;
-    const height = tag.offsetHeight;
-    const lanes = Math.min(4, footerTags.length);
-    const lane = index % lanes;
-    const laneWidth = field.width / lanes;
-    const x = Math.max(0, Math.min(field.width - width, lane * laneWidth + (laneWidth - width) / 2 + (index >= lanes ? laneWidth * .12 : -laneWidth * .08)));
-    const y = -height - 12 - Math.floor(index / lanes) * (height + 18);
-    const body = { tag, x, y, width, height, vx: 0, vy: 0, angle: footerRestAngles[index] || 0, spin: 0 };
-    tag.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${body.angle}deg)`;
-    return body;
+function getFooterRows(widths, availableWidth, gap) {
+  const firstRowWidth = widths.slice(0, 6).reduce((sum, width) => sum + width, 0) + gap * 5;
+  if (firstRowWidth <= availableWidth) return [[0, 1, 2, 3, 4, 5], [6, 7]];
+
+  const rows = [[]];
+  let rowWidth = 0;
+  widths.forEach((width, index) => {
+    const nextWidth = rowWidth + (rows[rows.length - 1].length ? gap : 0) + width;
+    if (nextWidth > availableWidth && rows[rows.length - 1].length) {
+      rows.push([]);
+      rowWidth = 0;
+    }
+    rows[rows.length - 1].push(index);
+    rowWidth += (rows[rows.length - 1].length > 1 ? gap : 0) + width;
   });
+  return rows;
 }
 
-function resolveFooterCollisions() {
-  for (let firstIndex = 0; firstIndex < footerBodies.length; firstIndex += 1) {
-    for (let secondIndex = firstIndex + 1; secondIndex < footerBodies.length; secondIndex += 1) {
-      const first = footerBodies[firstIndex];
-      const second = footerBodies[secondIndex];
-      const overlapX = Math.min(first.x + first.width, second.x + second.width) - Math.max(first.x, second.x);
-      const overlapY = Math.min(first.y + first.height, second.y + second.height) - Math.max(first.y, second.y);
-      if (overlapX <= 0 || overlapY <= 0) continue;
+function positionFooterTags(above = false) {
+  if (!footerTagField || !footerTags.length) return;
+  const footerInner = footerTagField.parentElement;
+  footerInner.style.minHeight = '';
+  if (reduceFooterMotion || narrowFooter.matches) return;
+  const fieldWidth = footerTagField.clientWidth;
+  const widths = footerTags.map((tag) => tag.offsetWidth);
+  const heights = footerTags.map((tag) => tag.offsetHeight);
+  const gap = 12;
+  const rowGap = 10;
+  const rows = getFooterRows(widths, fieldWidth - 24, gap);
+  const rowHeights = rows.map((row) => Math.max(...row.map((index) => heights[index])));
+  const totalHeight = rowHeights.reduce((sum, height) => sum + height, 0) + rowGap * (rows.length - 1);
+  const socialBottom = footerInner.querySelector('.contact-socials').getBoundingClientRect().bottom - footerTagField.getBoundingClientRect().top;
+  let rowY = Math.ceil(socialBottom + 64);
+  footerInner.style.minHeight = Math.max(420, rowY + totalHeight + 32) + 'px';
+  const targets = [];
 
-      if (overlapX < overlapY) {
-        const direction = first.x < second.x ? -1 : 1;
-        first.x += direction * overlapX * .5;
-        second.x -= direction * overlapX * .5;
-        const firstVelocity = first.vx;
-        first.vx = second.vx * .72;
-        second.vx = firstVelocity * .72;
-      } else {
-        const direction = first.y < second.y ? -1 : 1;
-        first.y += direction * overlapY * .5;
-        second.y -= direction * overlapY * .5;
-        const firstVelocity = first.vy;
-        first.vy = second.vy * .68;
-        second.vy = firstVelocity * .68;
-      }
-    }
-  }
+  rows.forEach((row, rowIndex) => {
+    const rowWidth = row.reduce((sum, index) => sum + widths[index], 0) + gap * (row.length - 1);
+    let x = (fieldWidth - rowWidth) / 2;
+    row.forEach((index) => {
+      targets[index] = { x, y: rowY + (rowHeights[rowIndex] - heights[index]) / 2 };
+      x += widths[index] + gap;
+    });
+    rowY += rowHeights[rowIndex] + rowGap;
+  });
+
+  footerBodies = footerTags.map((tag, index) => {
+    const target = targets[index];
+    const y = above ? -heights[index] - 24 - (index % 3) * 22 : target.y;
+    const angle = above ? footerStartAngles[index] : 0;
+    tag.classList.toggle('is-settled', !above);
+    tag.style.animationDelay = '-' + (index * .9) + 's';
+    tag.style.transform = 'translate3d(' + target.x + 'px, ' + y + 'px, 0) rotate(' + angle + 'deg)';
+    return { tag, x: target.x, y, targetY: target.y, vy: 0, angle, settled: !above };
+  });
 }
 
 function animateFooterTags(time) {
-  if (!footerIsRunning || !footerTagField) return;
-  const field = footerTagField.getBoundingClientRect();
   const delta = Math.min((time - footerLastTime) / 1000 || 0, .032);
   footerLastTime = time;
-  let movingBodies = 0;
+  let moving = false;
 
   footerBodies.forEach((body) => {
-    body.vy += 1150 * delta;
-    body.x += body.vx * delta;
+    if (body.settled) return;
+    body.vy += 1700 * delta;
     body.y += body.vy * delta;
-    body.angle += body.spin * delta;
-
-    if (body.x < 18) { body.x = 18; body.vx = Math.abs(body.vx) * .7; }
-    if (body.x + body.width > field.width - 18) { body.x = field.width - body.width - 18; body.vx = -Math.abs(body.vx) * .7; }
-    if (body.y < 0 && body.vy < 0) { body.y = 0; body.vy = Math.abs(body.vy) * .72; }
-    if (body.y + body.height > field.height) {
-      body.y = field.height - body.height;
-      body.vy = -Math.abs(body.vy) * .54;
-      body.vx *= .86;
-      if (Math.abs(body.vy) < 22) body.vy = 0;
+    body.angle *= Math.max(0, 1 - 8 * delta);
+    if (body.y >= body.targetY) {
+      body.y = body.targetY;
+      body.vy = -Math.abs(body.vy) * .2;
+      if (Math.abs(body.vy) < 45) {
+        body.vy = 0;
+        body.angle = 0;
+        body.settled = true;
+        body.tag.classList.add('is-settled');
+      }
     }
-    if (Math.abs(body.vx) + Math.abs(body.vy) + Math.abs(body.spin) > 8) movingBodies += 1;
+    body.tag.style.transform = 'translate3d(' + body.x + 'px, ' + body.y + 'px, 0) rotate(' + body.angle + 'deg)';
+    if (!body.settled) moving = true;
   });
 
-  resolveFooterCollisions();
-  footerBodies.forEach((body) => {
-    body.tag.style.transform = `translate3d(${body.x}px, ${body.y}px, 0) rotate(${body.angle}deg)`;
-  });
-
-  if (movingBodies > 0) footerAnimationFrame = window.requestAnimationFrame(animateFooterTags);
-  else footerIsRunning = false;
-}
-
-function launchFooterTags() {
-  if (!footerTagField || !footerBodies.length || reduceFooterMotion) return;
-  window.cancelAnimationFrame(footerAnimationFrame);
-  positionFooterTags();
-  footerBodies.forEach((body, index) => {
-    const direction = index % 2 === 0 ? 1 : -1;
-    body.vx = direction * (18 + (index % 4) * 12);
-    body.vy = 35 + (index % 3) * 28;
-    body.angle = footerRestAngles[index] || 0;
-    body.spin = 0;
-  });
-  footerIsRunning = true;
-  footerLastTime = performance.now();
-  footerAnimationFrame = window.requestAnimationFrame(animateFooterTags);
+  if (moving) footerAnimationFrame = window.requestAnimationFrame(animateFooterTags);
 }
 
 if (footerSection && footerTagField && footerTags.length && !reduceFooterMotion) {
-  positionFooterTags();
+  if (!narrowFooter.matches) positionFooterTags(true);
   const footerObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && !footerHasLaunched) {
-        footerHasLaunched = true;
-        launchFooterTags();
-        footerObserver.disconnect();
-      }
-    });
+    if (!entries.some((entry) => entry.isIntersecting) || footerHasLaunched) return;
+    footerHasLaunched = true;
+    footerObserver.disconnect();
+    if (narrowFooter.matches) return;
+    footerLastTime = performance.now();
+    footerAnimationFrame = window.requestAnimationFrame(animateFooterTags);
   }, { threshold: .05 });
   footerObserver.observe(footerSection);
   window.addEventListener('resize', () => {
-    if (!footerHasLaunched) positionFooterTags();
+    window.cancelAnimationFrame(footerAnimationFrame);
+    positionFooterTags(!footerHasLaunched);
   });
 }

@@ -16,7 +16,7 @@
         document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
     </script>
-  <link rel="stylesheet" href="./styles.css?v=20260927-2" />
+  <link rel="stylesheet" href="./styles.css?v=20261006-11" />
   </head>
   <body>
     <header class="site-header">
@@ -26,7 +26,7 @@
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#selected-work">Work</a>
         <a href="#about">About</a>
-        <a href="#resume">Resume</a>
+        <a href="./assets/Esther_Bassey_Product_Designer_CV.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
       </nav>
 
       <div class="header-actions">
@@ -45,20 +45,22 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h1 id="hero-title">I make pixels <span class="hero-rough">behave.</span></h1>
-          <p class="hero-description">I’m Esther, a <strong>Product Designer &amp; Design Engineer</strong> turning complex problems into thoughtful experiences, designed in Figma, brought to life with AI.</p>
+          <p class="hero-description">I’m Esther, a <strong>Product Designer</strong> turning complex systems into clear, expressive experiences—and increasingly building what I design.</p>
           <div class="hero-highlights-viewport">
             <div class="hero-highlights-track">
               <ul class="hero-highlights" aria-label="What I bring to the work">
-                <li>Complex systems, made simpler</li>
-                <li>4+ years of experience</li>
-                <li>Designing beyond the handoff</li>
-                <li>AI + Design + Code</li>
+                <li>Complexity → Clarity</li>
+                <li>Systems, not just screens</li>
+                <li>4+ years designing products</li>
+                <li>Interaction obsessed</li>
+                <li>Design → Build</li>
               </ul>
               <ul class="hero-highlights" aria-hidden="true">
-                <li>Complex systems, made simpler</li>
-                <li>4+ years of experience</li>
-                <li>Designing beyond the handoff</li>
-                <li>AI + Design + Code</li>
+                <li>Complexity → Clarity</li>
+                <li>Systems, not just screens</li>
+                <li>4+ years designing products</li>
+                <li>Interaction obsessed</li>
+                <li>Design → Build</li>
               </ul>
             </div>
           </div>
@@ -84,9 +86,12 @@
             <img class="systems-card-image" src="./assets/showcase-card-systems-4x.png" alt="" />
             <span class="systems-card-title">SYSTEMS DESIGN</span>
           </div>
-          <img class="showcase-card showcase-card-ai" src="./assets/showcase-card-ai-4x.png" alt="" />
+          <div class="showcase-card showcase-card-ai">
+            <img src="./assets/showcase-card-ai-4x.png" alt="" />
+            <span class="showcase-card-ai-title">DESIGN + BUILD</span>
+          </div>
         </div>
-        <span class="showcase-hint" aria-hidden="true"><span class="showcase-hint-desktop">PLAY WITH IT ↗</span><span class="showcase-hint-mobile">TAP TO MAKE THEM BEHAVE</span></span>
+        <span class="showcase-hint" aria-hidden="true"><span class="showcase-hint-mobile">TAP TO MAKE THEM BEHAVE</span></span>
         <span class="showcase-cursor-pill" aria-hidden="true">Click to make the pixels behave</span>
       </div>
 
@@ -278,12 +283,12 @@
           <div class="more-work-intro">
             <span class="section-number">03.</span>
             <div>
-              <h2 id="more-work-title">More Work</h2>
-              <p>A few more things I've shipped.</p>
+              <h2 id="more-work-title">Creative Pages</h2>
+              <p>A collection of landing pages I designed and built—where interaction, motion and visual storytelling get to play.</p>
             </div>
           </div>
 
-          <div class="more-work-filters" role="group" aria-label="Filter more work">
+          <div class="more-work-filters" role="group" aria-label="Filter more work" hidden>
             <button class="more-work-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
             <button class="more-work-filter" type="button" data-filter="designs" aria-pressed="false">Designs</button>
             <button class="more-work-filter" type="button" data-filter="ai" aria-pressed="false">Built with AI</button>
@@ -299,7 +304,13 @@
               <p>Your workplace questions, answered — without the digging.</p>
               <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Conversational UX</li><li>Landing Page</li></ul>
             </article>
-            <article class="more-work-card" data-categories="designs">
+            <article class="more-work-card" data-categories="designs landing">
+              <div class="more-work-artwork"><img src="./assets/more-employee-hub-landing-4x.png" width="2000" height="1534" alt="Employee Hub landing page displayed on a tablet" loading="lazy" /></div>
+              <h3><a href="https://www.gopaddi.com/en/workforce/employee-hub" target="_blank" rel="noopener noreferrer">Employee Hub</a></h3>
+              <p>Bringing everyday HR essentials together, so employees can focus on their work.</p>
+              <ul class="project-tags" aria-label="Project categories"><li>HR Tech</li><li>Employee Experience</li><li>Landing Page</li></ul>
+            </article>
+            <article class="more-work-card" data-categories="designs" data-project-hidden hidden>
               <div class="more-work-artwork">
                 <img src="./assets/more-learning-dashboard-4x.png" width="2000" height="1534" alt="My Learning dashboard displayed on a tablet" loading="lazy" />
               </div>
@@ -311,11 +322,11 @@
               <div class="more-work-artwork">
                 <img src="./assets/more-discova-journey-4x.png" width="2000" height="1534" alt="Task workflow landing page displayed on a tablet" loading="lazy" />
               </div>
-              <h3><a href="https://www.gopaddi.com/en/workforce/task-manager" target="_blank" rel="noopener noreferrer">Task Manager Landing Page</a></h3>
+              <h3><a href="https://www.gopaddi.com/en/workforce/task-manager" target="_blank" rel="noopener noreferrer">Task Manager</a></h3>
               <p>Turning task management into a story worth scrolling through.</p>
               <ul class="project-tags" aria-label="Project categories"><li>Landing Page</li><li>Visual Design</li><li>Storytelling</li></ul>
             </article>
-            <article class="more-work-card" data-categories="designs">
+            <article class="more-work-card" data-categories="designs" data-project-hidden hidden>
               <div class="more-work-artwork">
                 <img src="./assets/more-tasks-device-4x.png" width="2000" height="1534" alt="Task Manager dashboard displayed on a tablet" loading="lazy" />
               </div>
@@ -323,13 +334,13 @@
               <p>Keeping work moving, without the usual task chaos.</p>
               <ul class="project-tags" aria-label="Project categories"><li>Productivity</li><li>Workflow design</li><li>Product design</li></ul>
             </article>
-            <article class="more-work-card" data-categories="designs landing" data-project-hidden data-expanded-card hidden>
+            <article class="more-work-card" data-categories="designs landing" data-project-hidden hidden>
               <div class="more-work-artwork"><img src="./assets/more-discova-landing-4x.png" width="2000" height="1534" alt="Hotel operations landing page displayed on a tablet" loading="lazy" /></div>
               <h3><a href="https://www.gopaddi.com/en/automation" target="_blank" rel="noopener noreferrer">Automated Room Service</a></h3>
               <p>Making room service run itself, so hospitality teams can focus on the guest.</p>
               <ul class="project-tags" aria-label="Project categories"><li>Hospitality Tech</li><li>Automation</li><li>Landing Page</li></ul>
             </article>
-            <article class="more-work-card" data-categories="designs ai" data-expanded-card hidden>
+            <article class="more-work-card" data-categories="designs ai" data-project-hidden hidden>
               <div class="more-work-artwork">
                 <div class="ally-chat-visual">
                   <img src="./assets/more-ally-device-4x.png" width="2000" height="1534" alt="Ally AI conversation interface displayed on a tablet" loading="lazy" />
@@ -358,32 +369,25 @@
               <p>Workplace answers, without the digging.</p>
               <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Conversational UX</li><li>HR Tech</li></ul>
             </article>
-            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
-              <div class="more-work-artwork"><img src="./assets/more-employee-hub-landing-4x.png" width="2000" height="1534" alt="Employee Hub landing page displayed on a tablet" loading="lazy" /></div>
-              <h3>Employee Hub Landing Page</h3>
-              <p>Bringing everyday HR essentials together, so employees can focus on their work.</p>
-              <ul class="project-tags" aria-label="Project categories"><li>HR Tech</li><li>Employee Experience</li><li>Landing Page</li></ul>
-            </article>
-            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+            <article class="more-work-card" data-categories="designs landing" data-project-hidden hidden>
               <div class="more-work-artwork"><img src="./assets/more-learning-mobile-4x.png" width="2000" height="1534" alt="Hotel guest mobile access landing page displayed on a tablet" loading="lazy" /></div>
               <h3><a href="https://www.gopaddi.com/en/digital-lock" target="_blank" rel="noopener noreferrer">Digital Lock &amp; Self Check-in</a></h3>
               <p>From arrival to room access, without stopping at the front desk.</p>
               <ul class="project-tags" aria-label="Project categories"><li>Hospitality Tech</li><li>Guest Experience</li><li>Landing Page</li></ul>
             </article>
-            <article class="more-work-card" data-categories="designs landing" data-expanded-card hidden>
+            <article class="more-work-card" data-categories="designs landing">
               <div class="more-work-artwork"><img src="./assets/more-discova-dashboard-4x.png" width="2000" height="1534" alt="Leave management landing page displayed on a tablet" loading="lazy" /></div>
               <h3><a href="https://www.gopaddi.com/en/workforce/leave-management" target="_blank" rel="noopener noreferrer">Leave Management</a></h3>
               <p>Time off, without the back-and-forth.</p>
               <ul class="project-tags" aria-label="Project categories"><li>HR Tech</li><li>Leave Management</li><li>Landing Page</li></ul>
             </article>
-            <article class="more-work-card" data-categories="designs ai" data-project-hidden data-expanded-card hidden>
+            <article class="more-work-card" data-categories="designs ai" data-project-hidden hidden>
               <div class="more-work-artwork"><img src="./assets/more-rentlens-device-4x.png" width="2000" height="1534" alt="Rentlens apartment review interface displayed on a tablet" loading="lazy" /></div>
               <h3>Rentlens</h3>
               <p>Know what it’s like to live there, before you do.</p>
               <ul class="project-tags" aria-label="Project categories"><li>AI</li><li>Product design</li><li>PropTech</li></ul>
             </article>
           </div>
-          <button class="more-work-see-all" type="button" aria-expanded="false" aria-controls="more-work-grid">See all</button>
         </div>
       </section>
 
@@ -392,25 +396,26 @@
           <div class="about-me-intro">
             <span class="section-number">04.</span>
             <div>
-              <h2 id="about-title">A little about me</h2>
-              <p>Plot twist: I’m not always staring at a screen.</p>
+              <h2 id="about-title">A bit about Esther</h2>
+              <p>The work, the thinking, and a little of what happens in between.</p>
             </div>
           </div>
 
           <div class="about-me-body">
             <div class="about-me-copy">
-              <p class="about-me-lead">Hi, I’m <strong>Esther</strong>, a Product Designer turned <strong>Design Engineer with 4+ years of experience</strong>, mostly designing SaaS products and untangling complex workflows, multiple user roles, edge cases, and messy requirements into experiences that feel considerably simpler.</p>
-              <p>I’ve worked across <strong>Seven Apex Studio, OBST Solar Power Company, and Uzel</strong>, and I currently work at <strong><a class="about-me-link" href="https://www.gopaddi.com/" target="_blank" rel="noopener noreferrer">Gopaddi Technologies</a></strong>, designing and building products across travel, workforce management, AI, and business operations.</p>
-              <p>I love using <strong>storytelling in my design process</strong>—thinking about how each screen, interaction, and moment connects to create an experience that naturally carries the user from one point to the next. I’m also drawn to anything that lets me dip into my creativity, with <strong class="about-me-colour">colour as one of my favourite weapons</strong> for giving products personality and making them pop.</p>
-              <p>These days, I’m taking my work beyond Figma, using <strong>AI-assisted development</strong> to turn my designs into working experiences.</p>
-              <p><strong>When the laptop closes...</strong> I’m probably singing, listening to music, exploring somewhere new, or picking up another hobby I absolutely didn’t need.</p>
+              <p class="about-me-lead">Hi, I’m <strong>Esther</strong>, a Product Designer who enjoys making complicated things feel considerably simpler.</p>
+              <p>I design SaaS products where there’s usually a lot happening under the hood — <strong>multiple roles, permissions, dependencies, edge cases, and plenty of “but what happens if...?”</strong></p>
+              <p>I currently design and build products at <strong><a class="about-me-link" href="https://www.gopaddi.com/" target="_blank" rel="noopener noreferrer">Gopaddi Technologies</a></strong>, working across travel, workforce management, AI, and business operations.</p>
+              <p>I’m equally drawn to the <strong>expressive side of design.</strong> I love using storytelling, interaction, typography, motion, and <span class="about-me-colour">colour</span> to give interfaces personality — especially when designing for the web.</p>
+              <p>Lately, my work has moved <strong>beyond Figma.</strong></p>
+              <p>I use AI-assisted development to build and experiment with what I design, closing some of the distance between an idea and the thing people actually use.</p>
+              <p><strong>Away from the pixels,</strong> I’m probably singing, listening to music, exploring somewhere new, or enthusiastically picking up another hobby I absolutely didn’t need.</p>
             </div>
 
-            <div class="about-me-photos" aria-label="Photos of Esther" data-active="0">
-              <button class="about-photo" type="button" aria-label="Show Esther smiling in a navy top" aria-pressed="true"><img src="./assets/about-photo-main-figma-source.png" width="940" height="1672" alt="" loading="lazy" /></button>
-              <button class="about-photo" type="button" aria-label="Show Esther outdoors in a pink shirt" aria-pressed="false"><img src="./assets/about-photo-2-figma-source.png" width="1086" height="1448" alt="" loading="lazy" /></button>
-              <button class="about-photo" type="button" aria-label="Show a close-up portrait of Esther" aria-pressed="false"><img src="./assets/about-photo-3-figma-source.png" width="1086" height="1448" alt="" loading="lazy" /></button>
-              <button class="about-photo" type="button" aria-label="Show Esther smiling in a red top" aria-pressed="false"><img src="./assets/about-photo-4-figma-source.png" width="1086" height="1448" alt="" loading="lazy" /></button>
+            <div class="about-me-photos" role="group" aria-label="Photos of Esther">
+              <img src="./assets/about-photo-main-figma-source.png" width="940" height="1672" alt="Esther smiling in a navy top" loading="lazy" />
+              <img src="./assets/about-photo-2-figma-source.png" width="1086" height="1448" alt="Esther outdoors in a pink shirt" loading="lazy" />
+              <img src="./assets/about-photo-4-figma-source.png" width="1086" height="1448" alt="Esther smiling in a red top" loading="lazy" />
             </div>
           </div>
         </div>
@@ -419,13 +424,13 @@
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="contact-inner">
           <div class="contact-intro">
-            <h2 id="contact-title">You made it all the way down here.</h2>
+            <h2 id="contact-title">Made it this far? We might get along.</h2>
             <div class="contact-details">
               <div class="contact-copy">
-                <p>Either you're very thorough...</p>
-                <p>Or we should probably talk</p>
+                <p>I like complicated problems, ambitious ideas, and making things that feel ridiculously simple to use.</p>
+                <p>Let’s build something good.</p>
               </div>
-              <a class="contact-email" href="mailto:estherbassey4502@gmail.com">Send me an email</a>
+              <a class="contact-email" href="mailto:estherbassey4502@gmail.com">Let’s talk</a>
               <div class="contact-socials" aria-label="Social platforms">
                 <a class="contact-social contact-linkedin" href="https://www.linkedin.com/in/esther-bassey-530497216/" target="_blank" rel="noopener noreferrer" aria-label="Esther Bassey on LinkedIn"><img src="./assets/social-linkedin.svg" width="40" height="40" alt="" /></a>
                 <a class="contact-social contact-x" href="https://x.com/estybayy" target="_blank" rel="noopener noreferrer" aria-label="Esther Bassey on X"><img src="./assets/social-x.svg" width="15" height="13" alt="" /></a>
@@ -446,6 +451,7 @@
       </section>
     </main>
 
-    <script src="./script.js?v=20260927-2"></script>
+    <script src="./script.js?v=20261006-4"></script>
+    <script src="./case-footer.js?v=20261006-3"></script>
   </body>
 </html>

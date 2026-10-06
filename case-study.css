@@ -14,7 +14,7 @@ figure { margin: 0; }
 img { display: block; width: 100%; height: auto; }
 .cover { margin-top: 206px; margin-bottom: 100px; border-radius: 12px; overflow: hidden; }
 .cover img { aspect-ratio: 1.6; object-fit: cover; }
-.vacation-cover { position: relative; }
+.vacation-cover { position: relative; margin-top: 0; margin-bottom: 40px; }
 .vacation-cover-base { display: block; width: 100%; height: auto; }
 .vacation-cover .vacation-demo { border-radius: inherit; }
 .vacation-cover .vacation-demo-state { aspect-ratio: auto; object-fit: fill; }
@@ -27,6 +27,11 @@ h1 { font-size: 24px; font-weight: 500; line-height: 1.1; letter-spacing: -.8px;
 p { margin: 0 0 26px; }
 .intro-copy p { line-height: 1.65; }
 .intro-copy .disciplines { margin-top: 32px; margin-bottom: 0; font-size: 12px; line-height: 1.7; letter-spacing: .4px; }
+.vacation-introduction h1 { font-size: 24px; line-height: 1.06; font-weight: 600; letter-spacing: -.055em; }
+.vacation-introduction .subtitle { max-width: 520px; font-size: 14px; line-height: 1.25; letter-spacing: -.035em; }
+.vacation-introduction { margin-top: 206px; margin-bottom: 40px; }
+.vacation-introduction .intro-copy p { margin-bottom: 10px; }
+.vacation-introduction .intro-copy p:last-child { margin-bottom: 0; }
 .wide-image { overflow: hidden; border-radius: 12px; margin-bottom: 120px; }
 .project-details { display: grid; grid-template-columns: 1fr 1.6fr 1fr 1fr; gap: 48px; margin: 0 0 120px; }
 dt { font-size: 12px; letter-spacing: .8px; margin-bottom: 20px; color: var(--muted); }
@@ -50,6 +55,26 @@ dd span { color: var(--muted); }
 .story-questions { margin: 20px 0 24px; }
 .story .story-questions p { color: var(--ink); font-weight: 500; margin-bottom: 8px; }
 .story blockquote { max-width: 580px; margin: 28px 0; padding: 6px 0 6px 24px; border-left: 2px solid currentColor; color: var(--ink); font-size: 16px; line-height: 1.8; font-weight: 500; }
+.vacation-details { grid-template-columns: 1fr 1fr 2fr; }
+.vacation-details dt { margin-bottom: 5px; }
+.vacation-story h3 { max-width: 700px; margin: 64px 0 24px; color: var(--ink); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; font-weight: 600; letter-spacing: -.035em; }
+.vacation-story h2 + h3 { margin-top: 0; }
+.vacation-story .story-stack { line-height: 1.9; }
+.vacation-story .story-components p { margin-bottom: 22px; }
+.vacation-story .story-image { max-width: 860px; margin: 36px 0 52px; }
+.vacation-story .story-screen { max-width: 860px; margin-top: 40px; }
+.vacation-story .story-screen img { border-radius: 10px; background: var(--soft); }
+.vacation-story .story-screen-media { position: relative; }
+.vacation-story .story-screen .marketplace-card-overlay { position: absolute; top: 20.1%; left: 8.55%; width: 82.85%; height: auto; border-radius: 0; background: transparent; }
+.vacation-story .story-screen figcaption { max-width: 580px; margin-top: 14px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.vacation-story .story-page-link { display: inline-block; color: var(--ink); font-size: 16px; font-weight: 500; line-height: 1.5; border-bottom: 1px solid currentColor; }
+.vacation-story .story-page-link:hover { opacity: .7; }
+.vacation-screen-gallery { display: grid; gap: 64px; max-width: 860px; margin-top: 48px; }
+.vacation-screen-gallery figure { margin: 0; }
+.vacation-screen-gallery img { border-radius: 10px; background: var(--soft); }
+.vacation-screen-gallery figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: 16px; font-size: 16px; line-height: 1.5; color: var(--muted); }
+.vacation-screen-gallery figcaption strong { color: var(--ink); font-weight: 600; }
+.vacation-screen img { background: var(--soft); }
 .story-image { margin: 0 0 120px; overflow: hidden; border-radius: 10px; }
 .project-pagination { display: flex; justify-content: space-between; gap: 24px; margin: 80px 0 140px; padding-top: 40px; border-top: 1px solid #ffffff24; }
 .project-pagination a { display: flex; flex-direction: column; gap: 12px; }
@@ -75,16 +100,21 @@ dd span { color: var(--muted); }
   .introduction { gap: 40px; }
   .story-layout { grid-template-columns: 150px minmax(0,1fr); gap: 32px; }
   .project-details { grid-template-columns: 1fr 1fr; }
+  .vacation-details { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
   html { scroll-padding-top: 150px; }
   .container { padding-inline: 20px; }
   .cover { margin-top: 228px; margin-bottom: 56px; }
+  .vacation-cover { margin-top: 0; margin-bottom: 40px; }
+  .vacation-introduction { margin-top: 228px; }
   .cover img { aspect-ratio: 1; }
   .vacation-cover .vacation-demo-state { aspect-ratio: auto; }
   .introduction { grid-template-columns: 1fr; gap: 36px; margin-bottom: 64px; }
   .wide-image { margin-bottom: 64px; }
   .project-details { gap: 32px 20px; margin-bottom: 64px; }
+  .vacation-details { grid-template-columns: 1fr; }
+  .vacation-story h3 { margin-top: 48px; font-size: 23px; }
   .story-layout { display: block; }
   .story-layout aside { position: sticky; top: 83px; z-index: 10; margin: 0 -20px 36px; background: #131313f2; backdrop-filter: blur(12px); }
   [data-theme="light"] .story-layout aside { background: #fffffff2; }
